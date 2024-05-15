@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="./code/notification.css">
+<!--prizm-->
+    <link id="import-theme" rel="stylesheet" href="./system/content.css"/>
+    <script src="./system/content2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <link rel="stylesheet" href="./system/syntax.css">
+    <link rel="stylesheet" href="./system/syntax3.css" id="customTheme">
+    <script src="./system/content0.js"></script>
+    <script src="./system/content1.js"></script>
+    <script src="./system/content.js"></script>
+<!--/prizm-->
+<title>Prizm.js</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .ide_div {
+        margin-top: 5px;
+        width: 33%;
+        height: 70vh;
+        margin: 10px;
+    }
+    .codeWindow {
+        display: flex;
+        width: 100%;
+        transition: all .5s ease-in
+    }
+    .textarea-editor {
+        width: 93%;
+        height: 100%;
+    }
+    select {
+        padding: 10px 20px;
+    }
+</style>
+</head>
+<body>
+    <h2>Prizm.js - code syntex highlighted by prizm</h2>
+    <li>Project and themes by Evelocore</li>
+    <li>Simple code editor</li>
+    <br>
+    <select oninput="changeTheme(this.value)">
+        <option value="3">Theme 01</option>
+        <option value="4">Theme 02</option>
+        <option value="5">Theme 03</option>
+        <option value="6">Theme 04</option>
+        <option value="7">Theme 05</option>
+    </select>
+    <br><br>
+    <div class="codeWindow">
+        <div class="ide_div">
+            <code-input rows="30" class="textarea-editor" lang="HTML" placeholder="HTML" value=""></code-input>
+        </div>
+        <div class="ide_div">
+            <code-input rows="30" class="textarea-editor" lang="CSS" placeholder="CSS" value=""></code-input>
+        </div>
+        <div class="ide_div">
+            <code-input rows="30" class="textarea-editor" lang="JavaScript" placeholder="JS" value=""></code-input>
+        </div>
+    </div>
+    <script>
+        codeInput.registerTemplate("code-input", codeInput.templates.prism(Prism, [new codeInput.plugins.Indent()]))
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>
